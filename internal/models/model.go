@@ -1,0 +1,1 @@
+// Structs do GORM (banco de dados)
