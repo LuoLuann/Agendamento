@@ -4,12 +4,13 @@ import (
 	"log"
 
 	"github.com/LuoLuann/Agendamento/internal/config"
+	"github.com/LuoLuann/Agendamento/migrations"
 	"github.com/gin-gonic/gin"
 )
 
 func main() {
 	db, err := config.ConnectDB()
-
+	migrations.RunMigrations(db)
 	if err != nil {
 		log.Fatalf("Falha ao conectar no DB: %v", err)
 	}
