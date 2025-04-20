@@ -1,1 +1,0 @@
-// configurações como db e env vars
