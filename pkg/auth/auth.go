@@ -1,1 +1,1 @@
-// Autenticação JWT
+package auth

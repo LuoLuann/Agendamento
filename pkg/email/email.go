@@ -1,1 +1,1 @@
-// Serviço de e-mails
+package email

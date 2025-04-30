@@ -1,1 +1,1 @@
-// Definição das rotas (Gin)
+package routes

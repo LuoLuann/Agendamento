@@ -1,1 +1,1 @@
-// Lógica dos handlers HTTP (Gin)
+package controllers

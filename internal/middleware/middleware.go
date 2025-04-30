@@ -1,1 +1,1 @@
-// Middlewares (auth, logging)
+package middleware
