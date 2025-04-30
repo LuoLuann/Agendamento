@@ -4,8 +4,8 @@ import (
 	"log"
 
 	"github.com/LuoLuann/Agendamento/internal/config"
+	"github.com/LuoLuann/Agendamento/internal/routes"
 	"github.com/LuoLuann/Agendamento/migrations"
-	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -27,11 +27,6 @@ func main() {
 
 	migrations.RunMigrations(db)
 
-	router := gin.Default()
-	router.GET("/ping", func(c *gin.Context) {
-		c.JSON(200, gin.H{
-			"message": "hehehe funcionou",
-		})
-	})
+	router := routes.Initialize()
 	router.Run(":3000")
 }
