@@ -10,7 +10,6 @@ import (
 
 func main() {
 	db, err := config.ConnectDB()
-	migrations.RunMigrations(db)
 	if err != nil {
 		log.Fatalf("Falha ao conectar no DB: %v", err)
 	}
@@ -25,6 +24,8 @@ func main() {
 		log.Fatalf("Falha no ping ao banco de dados: %v", err)
 	}
 	log.Println("✅ Banco de dados conectado com sucesso!")
+
+	migrations.RunMigrations(db)
 
 	router := gin.Default()
 	router.GET("/ping", func(c *gin.Context) {
