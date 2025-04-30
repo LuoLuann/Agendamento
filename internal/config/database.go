@@ -26,8 +26,6 @@ func ConnectDB() (*gorm.DB, error) {
 		os.Getenv("DB_SSLMODE"), // e.g. "disable"
 	)
 
-	fmt.Println(dsn)
-
 	db, err := gorm.Open(postgres.Open(dsn), &gorm.Config{})
 
 	if err != nil {
