@@ -10,6 +10,11 @@ import (
 func RunMigrations(db *gorm.DB) {
 	m := gormigrate.New(db, gormigrate.DefaultOptions, []*gormigrate.Migration{
 		CreateUserTable(),
+		CreateServiceTable(),
+		CreateOfferingTable(),
+		CreateRequestingUsersTable(),
+		CreateSchedulingTable(),
+		CreateVacancyTable(),
 	})
 	if err := m.Migrate(); err != nil {
 		log.Fatalf("Failed to migrate: %v", err)

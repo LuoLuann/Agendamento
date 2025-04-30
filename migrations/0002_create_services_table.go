@@ -6,17 +6,17 @@ import (
 	"gorm.io/gorm"
 )
 
-func CreateUserTable() *gormigrate.Migration {
+func CreateServiceTable() *gormigrate.Migration {
 	return &gormigrate.Migration{
-		ID: "20250430_create_users_table",
+		ID: "20250430_create_services_table",
 		Migrate: func(d *gorm.DB) error {
-			if err := d.AutoMigrate(&models.User{}); err != nil {
+			if err := d.AutoMigrate(&models.Service{}); err != nil {
 				return err
 			}
 			return nil
 		},
 		Rollback: func(d *gorm.DB) error {
-			if err := d.Migrator().DropTable("users"); err != nil {
+			if err := d.Migrator().DropTable("services"); err != nil {
 				return err
 			}
 			return nil
