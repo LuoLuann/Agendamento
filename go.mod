@@ -8,6 +8,7 @@ require (
 	github.com/joho/godotenv v1.5.1
 	gorm.io/driver/postgres v1.5.11
 	gorm.io/gorm v1.25.12
+	github.com/google/uuid v1.6.0
 )
 
 require (
